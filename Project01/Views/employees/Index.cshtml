@@ -9,7 +9,7 @@
 </div>
 
 <div class="page-controlButtonContainer">
-    @Html.ActionLink("Nuevo registro", "Create", null, null, new { @class = "btn btn-primary btn-large" })
+    @Html.ActionLink(" Nuevo registro", "Create", null, null, new { @class = "btn btn-primary btn-large fa fa-trash" })
 </div>
 
 <table class="table">
@@ -45,11 +45,16 @@
                 @Html.DisplayFor(modelItem => item.department.dpt_Description)
             </td>
             <td>
-               @Html.ActionLink("Modificar", "Edit", null, new { id = item.employeeid }, new { @class = "btn btn-info btn-sm" })
-               @Html.ActionLink("Detalle", "Details", null, new { id = item.employeeid }, new { @class = "btn btn-success btn-sm" })
-               @Html.ActionLink("Eliminar", "Delete", null, new { id = item.employeeid }, new { @class = "btn btn-danger btn-sm" })
+                <button id="edit" onclick="popup(@item.employeeid)" class="btn btn-primary btn-sm">Modificar</button>
+                @Html.ActionLink("Detalle", "Details", null, new { id = item.employeeid }, new { @class = "btn btn-success btn-sm" })
+                @Html.ActionLink("Eliminar", "Delete", null, new { id = item.employeeid }, new { @class = "btn btn-danger btn-sm" })
             </td>
         </tr>
+
     }
 
 </table>
+
+<a class="btn btn-danger" href="#">
+    <i class="fa fa-trash"></i> Delete
+</a>

@@ -1,6 +1,7 @@
 ﻿@model Project01.Models.employee
 
 @{
+    Layout = null;
     ViewBag.Title = "Edit";
 }
 
@@ -53,7 +54,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Guardar" class="btn btn-primary btn-sm" /> |
+                <input type="submit" value="Guarda" class="btn btn-primary btn-sm" /> |
                 @Html.ActionLink("Listado", "Index", null, null, new { @class = "btn btn-primary btn-sm" })
             </div>
         </div>
