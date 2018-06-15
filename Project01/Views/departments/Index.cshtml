@@ -10,7 +10,8 @@
 
 
 <div class="page-controlButtonContainer">
-    @Html.ActionLink("Nuevo registro", "Create", null, new { @class = "btn btn-primary btn-large" })
+    <!--@Html.ActionLink("Nuevo registro", "Create", null, new { @class = "btn btn-primary btn-large" })-->
+    <button id="Create" onclick="popupDepartmentsCreate()" class="btn btn-primary btn-large fa fa-trash">Nuevo registro</button>
 </div>
 
 
@@ -30,9 +31,16 @@
                     @Html.DisplayFor(modelItem => item.dpt_Description)
                 </td>
                 <td>
+
+                    <button id="edit" onclick="popupDepartmentsEdit(@item.departmentid)" class="btn btn-primary btn-sm">Modificar</button>
+                    <button id="details" onclick="popupDepartmentsDetails(@item.departmentid)" class="btn btn-success btn-sm">Detalle</button>
+                    <button id="delete" onclick="popupDepartmentsDelete(@item.departmentid)" class="btn btn-danger btn-sm">Eliminar</button>
+
+                    <!--
                     @Html.ActionLink("Modificar", "Edit", null, new { id = item.departmentid }, new { @class = "btn btn-primary btn-sm" }) |
-                    @Html.ActionLink("Detalle", "Details", null,  new { id = item.departmentid }, new { @class = "btn btn-success btn-sm" }) |
+                    @Html.ActionLink("Detalle", "Details", null, new { id = item.departmentid }, new { @class = "btn btn-success btn-sm" }) |
                     @Html.ActionLink("Eliminar", "Delete", null, new { id = item.departmentid }, new { @class = "btn btn-danger btn-sm" })
+                    -->
                 </td>
             </tr>
         }
