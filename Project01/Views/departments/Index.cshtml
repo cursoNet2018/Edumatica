@@ -11,10 +11,8 @@
 
 <div class="page-controlButtonContainer">
     <!--@Html.ActionLink("Nuevo registro", "Create", null, new { @class = "btn btn-primary btn-large" })-->
-    <button id="Create" onclick="popupDepartmentsCreate()" class="btn btn-primary btn-large fa fa-trash">Nuevo registro</button>
+    <button id="Create" onclick="popupDepartmentsCreate()" class="btn btn-primary btn-large fa fa-file"> Nuevo registro</button>
 </div>
-
-
 
     <table class="table">
         <tr>
@@ -32,9 +30,9 @@
                 </td>
                 <td>
 
-                    <button id="edit" onclick="popupDepartmentsEdit(@item.departmentid)" class="btn btn-primary btn-sm">Modificar</button>
-                    <button id="details" onclick="popupDepartmentsDetails(@item.departmentid)" class="btn btn-success btn-sm">Detalle</button>
-                    <button id="delete" onclick="popupDepartmentsDelete(@item.departmentid)" class="btn btn-danger btn-sm">Eliminar</button>
+                    <button id="edit" onclick="popupDepartmentsEdit(@item.departmentid)" class="btn btn-primary btn-sm fa fa-pencil"> Modificar</button>
+                    <button id="details" onclick="popupDepartmentsDetails(@item.departmentid)" class="btn btn-success btn-sm fa fa-file-text"> Detalle</button>
+                    <button id="delete" onclick="popupDepartmentsDelete(@item.departmentid)" class="btn btn-danger btn-sm fa fa-trash"> Eliminar</button>
 
                     <!--
                     @Html.ActionLink("Modificar", "Edit", null, new { id = item.departmentid }, new { @class = "btn btn-primary btn-sm" }) |
