@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Project01.Models.department>
+
+@{
+    ViewBag.Title = "Departamentos";
+}
+
+<div class="page-titleContainer">
+    <h2 class="page-title">Administración de departamentos</h2>
+</div>
+
+
+<div class="page-controlButtonContainer">
+    <!--@Html.ActionLink("Nuevo registro", "Create", null, new { @class = "btn btn-primary btn-large" })-->
+    <button id="Create" onclick="popupDepartmentsCreate()" class="btn btn-primary btn-large fa fa-file"> Nuevo registro</button>
+</div>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.dpt_Description)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.dpt_Description)
+                </td>
+                <td>
+
+                    <button id="edit" onclick="popupDepartmentsEdit(@item.departmentid)" class="btn btn-primary btn-sm fa fa-pencil"> Modificar</button>
+                    <button id="details" onclick="popupDepartmentsDetails(@item.departmentid)" class="btn btn-success btn-sm fa fa-file-text"> Detalle</button>
+                    <button id="delete" onclick="popupDepartmentsDelete(@item.departmentid)" class="btn btn-danger btn-sm fa fa-trash"> Eliminar</button>
+
+                    <!--
+                    @Html.ActionLink("Modificar", "Edit", null, new { id = item.departmentid }, new { @class = "btn btn-primary btn-sm" }) |
+                    @Html.ActionLink("Detalle", "Details", null, new { id = item.departmentid }, new { @class = "btn btn-success btn-sm" }) |
+                    @Html.ActionLink("Eliminar", "Delete", null, new { id = item.departmentid }, new { @class = "btn btn-danger btn-sm" })
+                    -->
+                </td>
+            </tr>
+        }
+
+    </table>
